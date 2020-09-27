@@ -1,12 +1,14 @@
-import { shallowMount } from "@vue/test-utils";
-import HelloWorld from "@/components/HelloWorld.vue";
+import { mount, shallowMount } from '@vue/test-utils'
+import App from '@/components/HelloWorld.vue'
 
-describe("HelloWorld.vue", () => {
-  it("renders props.msg when passed", () => {
-    const msg = "new message";
-    const wrapper = shallowMount(HelloWorld, {
-      props: { msg }
-    });
-    expect(wrapper.text()).toMatch(msg);
-  });
-});
+test('uses mounts', async () => {
+  const wrapper = mount(App)
+  expect(wrapper.html()).toContain('test')
+})
+
+
+test('uses shallowMount', async () => {
+  const wrapper = shallowMount(App)
+  expect(wrapper.html()).toContain('test')
+  expect(wrapper.html()).not.toContain('Hello world')
+})

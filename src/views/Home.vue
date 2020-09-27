@@ -1,18 +1,39 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <div style="display: flex;flex-direction: column">
+      <label style="font-weight: bold;">count: {{ count }}</label>
+      <button class="btn" @click="incrementCounter">
+        Increment Counter
+      </button>
+    </div>
   </div>
+  <Suspense>
+    <template #default>
+      <SusFall />
+    </template>
+    <template #fallback>
+      Loading...
+    </template>
+  </Suspense>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import SusFall from "./SusFall.vue";
+import { useCounter } from "@/use/useCounter";
 
 export default defineComponent({
   name: "Home",
   components: {
-    HelloWorld
+    SusFall
+  },
+  setup() {
+    const { count, incrementCounter } = useCounter();
+    return {
+      count,
+      incrementCounter
+    };
   }
 });
 </script>
