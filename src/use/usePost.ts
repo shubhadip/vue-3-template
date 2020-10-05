@@ -1,5 +1,5 @@
 import { AllActionTypes } from "@/store/action-types";
-import { POSTS } from "@/store/counter/actions";
+import { POSTS } from "@/store/modules/counter/actions";
 import { useStore } from "@/use/useStore";
 import { computed, Ref } from "vue";
 
