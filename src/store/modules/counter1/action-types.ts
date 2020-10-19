@@ -1,0 +1,4 @@
+export enum ActionTypes {
+  GET_COUTNER1 = "GET_COUTNER1",
+  SET_ROOT_DISPATCH = "SET_ROOT_DISPATCH"
+}

@@ -6,6 +6,7 @@
 <div>
     <div class="elabel">
         <h3>Posts List {{ amt }}</h3>
+        <SampleComponent />
     </div>
     <div class="employee">
         <div v-if="!isFetching">
@@ -52,15 +53,20 @@ import {
 import {
     POSTS
 } from "@/store/modules/counter/actions";
-import {
-    mapStores
-} from 'vuex';
+// import {
+//     mapStores
+// } from 'vuex';
 import {
     Store
 } from "@/store";
-
+import {
+    SampleComponent
+} from 'shubh-vue-component-library';
 export default defineComponent({
     name: "Network",
+    components: {
+        SampleComponent,
+    },
     setup() {
         const store: Store = useStore();
         const amt = ref < string | undefined > ();
