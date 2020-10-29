@@ -33,7 +33,6 @@ export default defineComponent({
     name: "CompositionAPIComponent",
     setup() {
         const store = useStore();
-
         const counter = computed(() => store.getters.counterValue);
         const doubledCounter = computed(() => store.getters.doubledCounter);
 

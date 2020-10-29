@@ -2,8 +2,9 @@
 <div class="about">
     <img alt="Vue logo" src="../assets/logo.png" />
     <h1 @click="test">This is an about page</h1>
+    <test-world></test-world>
     <hello-world></hello-world>
-    <toast-component></toast-component>
+    <!-- <toast-component></toast-component> -->
 </div>
 <div></div>
 </template>

@@ -33,6 +33,12 @@ const routes: Array<RouteRecordRaw> = [
     name: "CompositionApi",
     component: () =>
       import(/* webpackChunkName: "cc" */ "../views/CompositionComponent.vue")
+  },
+  {
+    path: "/test",
+    name: "Test",
+    component: () =>
+      import(/* webpackChunkName: "test" */ "../views/Test.vue")
   }
 ];
 
