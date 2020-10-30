@@ -25,8 +25,8 @@ export const mutations: MutationTree<State> & CounterMutationsTypes = {
     state.selectedEmployee = payload;
   },
   [MutationTypes.SET_MESSAGE](state, payload: string) {
-    debugger
-    console.log('payload', payload);
+    debugger;
+    console.log("payload", payload);
     state.message = payload;
   }
 };

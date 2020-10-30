@@ -17,5 +17,5 @@ export const mutations: MutationTree<State> & CounterMutationsTypes = {
   },
   [MutationTypes.SET_ROOT_DISPATCH](state, payload: boolean) {
     state.rootDispatch = payload;
-  },
+  }
 };

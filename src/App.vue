@@ -1,36 +1,36 @@
 <template>
-<div id="nav">
+  <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/service">Service</router-link> |
     <router-link to="/compositionapi">Composition Api</router-link> |
     <router-link to="/network">network</router-link>
     <router-link to="/test">network</router-link>
-</div>
-<router-view v-slot="slotProps">
+  </div>
+  <router-view v-slot="slotProps">
     <component :is="slotProps.Component"></component>
-</router-view>
+  </router-view>
 </template>
 
 <style lang="scss">
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
 }
 
 #nav {
-    padding: 30px;
+  padding: 30px;
 
-    a {
-        font-weight: bold;
-        color: #2c3e50;
+  a {
+    font-weight: bold;
+    color: #2c3e50;
 
-        &.router-link-exact-active {
-            color: #42b983;
-        }
+    &.router-link-exact-active {
+      color: #42b983;
     }
+  }
 }
 </style>

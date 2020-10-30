@@ -5,5 +5,5 @@ export interface State {
   status?: string;
   data: POSTS[];
   selectedEmployee: POSTS;
-  message?: string
+  message?: string;
 }

@@ -5,7 +5,7 @@ import { State } from "./types";
 export type CounterGettersTypes = {
   doubledCounter1(state: State): number;
   counterValue1(state: State): number;
-  getRootDispatch(state: State): boolean
+  getRootDispatch(state: State): boolean;
 };
 
 export const getters: GetterTree<State, RootStateTyping> &
