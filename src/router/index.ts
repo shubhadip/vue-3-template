@@ -38,6 +38,12 @@ const routes: Array<RouteRecordRaw> = [
     path: "/test",
     name: "Test",
     component: () => import(/* webpackChunkName: "test" */ "../views/Test.vue")
+  },
+  {
+    path: "/casprop",
+    name: "Casprop",
+    component: () =>
+      import(/* webpackChunkName: "cprop" */ "../views/Casprop.vue")
   }
 ];
 

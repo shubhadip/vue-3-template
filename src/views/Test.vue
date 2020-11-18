@@ -14,10 +14,6 @@ import { TestWorld } from "vue3-component-library/dist/esm/testworld";
 
 import { defineComponent } from "vue";
 
-import { useStore } from "@/use/useStore";
-
-const store = useStore();
-
 export default defineComponent({
   name: "Test",
   components: {
