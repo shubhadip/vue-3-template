@@ -5,8 +5,7 @@
     <router-link to="/service">Service</router-link> |
     <router-link to="/compositionapi">Composition Api</router-link> |
     <router-link to="/network">network</router-link> |
-    <router-link to="/test">network</router-link> |
-    <router-link to="/casprop">C as Prop</router-link>
+    <router-link to="/test">network</router-link>
   </div>
   <router-view v-slot="slotProps">
     <component :is="slotProps.Component"></component>
