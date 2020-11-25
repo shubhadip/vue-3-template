@@ -1,3 +1,18 @@
+# [1.1.0](https://github.com/shubhadip/vue-3-template/compare/v1.0.1...v1.1.0) (2020-11-25)
+
+
+### Bug Fixes
+
+* 🐛 tesrting etsingsg ([ffbca6e](https://github.com/shubhadip/vue-3-template/commit/ffbca6e257c3a0aac5b85b668a0ead9f6f64d25b))
+* 🐛 testing fix feature ([f1638e1](https://github.com/shubhadip/vue-3-template/commit/f1638e142971e69a79c9e172f7eb56ec51172ba6))
+* datepicker css variables used ([4e18bae](https://github.com/shubhadip/vue-3-template/commit/4e18bae9c19bdfa9006905dc68b4c3753d17c270))
+* release sh changes ([32c960a](https://github.com/shubhadip/vue-3-template/commit/32c960a42f34222cc1d8a12c4a137e7407bbb7a2))
+
+
+### Features
+
+* manually bumping up version number ([c900e65](https://github.com/shubhadip/vue-3-template/commit/c900e657c01729e02a0523618f56a02b03a563ca))
+
 ## [1.0.2](https://github.com/shubhadip/vue-3-template/compare/v1.0.1...v1.0.2) (2020-11-25)
 
 
