@@ -1,6 +1,5 @@
 <template>
   <div id="nav">
-    <date-picker />
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/service">Service</router-link> |
@@ -16,12 +15,6 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import Datepicker from "vuejs3-datepicker";
-export default defineComponent({
-  components: {
-    DatePicker: Datepicker
-  }
-});
 </script>
 <style lang="scss">
 #app {
