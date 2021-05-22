@@ -8,7 +8,7 @@ pipeline{
     stage('Build'){
       steps {
         sh "yarn install";
-        sh "echo 'Building ...";
+        sh "echo 'Building ...'";
         sh "yarn build";
       }
     }
