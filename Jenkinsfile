@@ -5,10 +5,13 @@ pipeline{
     LASTNAME = 'matata'
   }
   stages {
+    stage('Prepare'){
+      steps {
+        sh "npm install -g yarn"
+      }
+    }
     stage('Build'){
       steps {
-        sh "yarn install";
-        sh "echo 'Building ...'";
         sh "yarn build";
       }
     }
