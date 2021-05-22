@@ -1,57 +1,29 @@
-pipeline{
-  agent any;
-  environment {
-    NAME = 'hakuna'
-    LASTNAME = 'matata'
-  }
-  stages {
-    stage('Prepare'){
-      steps {
-        sh "npm install -g yarn"
-      }
-    }
-    stage('Build'){
-      steps {
-        sh "yarn build";
-      }
-    }
-    // stage('Retry'){
-    //   steps {
-    //     retry(3){
-    //       sh "echo am not going to work "
-    //     }
-    //   }
-    // }
-    stage('Test'){
-      steps {
-        echo 'Testing ...';
-      }
-    }
-    stage('Deploy'){
-      steps {
-        retry(3){
-          sh 'echo title';
+pipeline {
+    agent {
+        docker {
+            image 'node:6-alpine'
+            args '-p 3000:3000'
         }
-        // timeout(time: 3, unit: 'SECONDS'){
-        //   sh 'sleep 5'
-        // }
-        echo 'Deploying ...';
-        sh 'echo ${NAME} ${LASTNAME} Deploying ...'
-      }
     }
-  }
-  post {
-    always {
-      echo " always executed";
+     environment {
+            CI = 'true'
+        }
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+                    steps {
+                        sh 'echo Testing'
+                    }
+                }
+                stage('Deliver') {
+                            steps {
+                                sh 'echo Deployed'
+                            }
+                        }
+
     }
-    success {
-      echo " executed if success";
-    }
-    failure {
-      echo "executed if failure";
-    }
-    unstable {
-      echo " executed if unstable";
-    }
-  }
 }
