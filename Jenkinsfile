@@ -7,17 +7,18 @@ pipeline{
   stages {
     stage('Build'){
       steps {
-        sh "echo 'Building ...a'";
-        sh "echo 'Building1 ...a'";
+        sh "yarn install";
+        sh "echo 'Building ...";
+        sh "yarn build";
       }
     }
-    stage('Retry'){
-      steps {
-        retry(3){
-          sh "echo am not going to work "
-        }
-      }
-    }
+    // stage('Retry'){
+    //   steps {
+    //     retry(3){
+    //       sh "echo am not going to work "
+    //     }
+    //   }
+    // }
     stage('Test'){
       steps {
         echo 'Testing ...';
