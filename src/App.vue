@@ -15,6 +15,15 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
+export default defineComponent({
+  name: "App",
+  setup() {
+    const temp = "Temporary";
+    return {
+      temp
+    };
+  }
+});
 </script>
 <style lang="scss">
 #app {
