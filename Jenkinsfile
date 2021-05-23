@@ -1,29 +1,18 @@
-pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
-        }
-    }
-     environment {
-            CI = 'true'
-        }
-    stages {
-        stage('Build') {
+pipeline{
+    agent any;
+     tools {nodejs "node"}
+    stages{
+         stage('prepare') {
             steps {
-                sh 'npm install'
+                sh 'node --version';
+                sh 'npm install yarn';
+                sh 'yarn install';
+            }
+         stage('build') {
+            steps {
+                sh 'yarn build';
             }
         }
-        stage('Test') {
-                    steps {
-                        sh 'echo Testing'
-                    }
-                }
-                stage('Deliver') {
-                            steps {
-                                sh 'echo Deployed'
-                            }
-                        }
-
     }
+}
 }
