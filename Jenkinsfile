@@ -8,13 +8,12 @@ pipeline {
     stage('Prepare') {
       steps {
         sh 'node --version';
-        sh 'npm install yarn';
-        sh 'yarn install';
+        sh 'npm install'
       }
     }
     stage('build') {
       steps {
-        sh 'yarn build';
+        sh 'npm run build';
       }
     }
   }
