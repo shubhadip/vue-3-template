@@ -4,10 +4,16 @@ module.exports = {
     "^@/(.*)$": "<rootDir>/src/$1"
   },
   globals: {},
-  testEnvironment: "jsdom",
+  testMatch: ['**/*.spec.(js|ts)'],
   transform: {
     "^.+\\.vue$": "vue-jest",
     "^.+\\ts$": "ts-jest"
   },
-  moduleFileExtensions: ["vue", "js", "json", "jsx", "ts", "tsx", "node"]
+  collectCoverage: true,
+  moduleFileExtensions: ["vue", "js", "json", "jsx", "ts", "tsx", "node"],
+  coverageReporters: ['html', 'text', 'lcov','json'],
+  coverageDirectory: 'unitTests/coverage',
+  collectCoverageFrom: [
+    'src/use/useAmountInWords.ts',
+  ]
 };

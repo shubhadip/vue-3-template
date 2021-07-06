@@ -5,8 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e",
+    "test": "jest --coverage",
     "lint": "vue-cli-service lint",
     "semantic-release:local": "semantic-release --no-ci",
     "semantic-release": "semantic-release",

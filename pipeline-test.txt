@@ -1,0 +1,15 @@
+pipeline {
+	agent any;
+	tools {
+			nodejs "node";
+	}
+	stages{
+		
+		stage('SonarQube analysis') {
+			def scannerHome = tool 'sonarqube';
+			withSonarQubeEnv('sonarqube') { 
+				sh "${scannerHome}/bin/sonar-scanner -e -Dsonar.projectVersion=${env.BUILD_NUMBER} -Dsonar.projectKey=vue-3-template -Dsonar.sources=. "
+			}
+		}
+	}
+}

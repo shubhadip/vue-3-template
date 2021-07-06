@@ -1,3 +1,8 @@
+export function multiply(a: number, b: number): number {
+  return a * b;
+}
+
+/* istanbul ignore next */
 export function useAmountInWords(
   param: number,
   precision = 1,
