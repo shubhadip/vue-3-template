@@ -4,23 +4,26 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
     "test": "jest --coverage",
     "lint": "vue-cli-service lint",
     "semantic-release:local": "semantic-release --no-ci",
     "semantic-release": "semantic-release",
     "cz": "git-cz",
-    "commit-message": "yarn commitlint -e -V"
+    "commit-message": "yarn commitlint -e -V",
+    "build:client": "vue-cli-service build --dest dist/client",
+    "build:server": "VUE_APP_SSR=true vue-cli-service build --dest dist/server",
+    "build": "rm -rf ./dist && npm run build:client && npm run build:server"
   },
   "dependencies": {
+    "@vue/server-renderer": "^3.0.0-rc.5",
     "axios": "^0.20.0",
     "compression": "^1.7.4",
     "core-js": "^3.6.5",
     "express": "^4.17.1",
     "register-service-worker": "^1.7.1",
+    "serialize-javascript": "^6.0.0",
     "shubh-vue-component-library": "1.0.6",
-    "vue": "^3.0.0-0",
-    "vue-cli-plugin-webpack-bundle-analyzer": "^2.0.0",
+    "vue": "^3.1.4",
     "vue-router": "^4.0.0-0",
     "vue3-component-library": "^0.0.6",
     "vuejs3-datepicker": "^0.0.6",
@@ -71,7 +74,9 @@
     "sass-loader": "^8.0.2",
     "semantic-release": "17.2.1",
     "typescript": "~3.9.3",
-    "vue-jest": "^5.0.0-alpha.1"
+    "vue-jest": "^5.0.0-alpha.1",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-node-externals": "^2.5.1"
   },
   "husky": {
     "hooks": {

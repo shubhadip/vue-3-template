@@ -30,6 +30,7 @@ export default defineComponent({
   },
   setup() {
     const { count, incrementCounter } = useCounter();
+
     return {
       count,
       incrementCounter

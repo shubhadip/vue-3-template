@@ -1,4 +1,9 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import {
+  createRouter,
+  createMemoryHistory,
+  createWebHistory,
+  RouteRecordRaw
+} from "vue-router";
 import Home from "../views/Home.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -46,9 +51,12 @@ const routes: Array<RouteRecordRaw> = [
       import(/* webpackChunkName: "cprop" */ "../views/Casprop.vue")
   }
 ];
+const isServer = typeof window === "undefined";
+
+const history = isServer ? createMemoryHistory() : createWebHistory();
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history,
   routes
 });
 

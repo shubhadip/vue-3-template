@@ -6,7 +6,7 @@
     <div class="employee">
       <div v-for="elem in posts" :key="elem" class="elist">
         <div class="eitem">
-          {{ elem.id }}
+          {{ elem.title }}
         </div>
       </div>
     </div>
@@ -15,13 +15,14 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+import axios from "axios";
 
 export default defineComponent({
   name: "SusFall",
   async setup() {
-    const posts = ref(null);
-    const data = await fetch("http://jsonplaceholder.typicode.com/posts");
-    posts.value = await data.json();
+    const posts = ref<any>(null);
+    const temp = await axios("http://jsonplaceholder.typicode.com/posts");
+    posts.value = temp.data;
 
     return {
       posts

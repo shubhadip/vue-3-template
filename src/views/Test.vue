@@ -4,13 +4,12 @@
     <h1 @click="test">This is an about page</h1>
     <test-world></test-world>
     <hello-world></hello-world>
-    <!-- <toast-component></toast-component> -->
   </div>
   <div></div>
 </template>
 
 <script lang="ts">
-import { TestWorld } from "vue3-component-library/dist/esm/testworld";
+import { TestWorld } from "vue3-component-library/components/testworld";
 
 import { defineComponent } from "vue";
 
